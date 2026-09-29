@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#161714" />
+    <title>Label Bench | Skerneside Brewing</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="Skerneside Brewing label bench">
+        <span class="wordmark-mark" aria-hidden="true">S</span>
+        <span>SKERNESIDE <span class="wordmark-light">BREWING</span></span>
+      </a>
+      <span class="topbar-note">LABEL BENCH <span class="live-dot"></span></span>
+    </header>
+
+    <main id="top" class="workspace">
+      <section class="editor" aria-labelledby="editor-heading">
+        <div class="section-kicker"><span>01</span> / NEW LABEL</div>
+        <h1 id="editor-heading">Brew details</h1>
+        <p class="section-intro">The beer changes. The brewery stays yours.</p>
+
+        <form id="label-form" autocomplete="off">
+          <label class="field field-name">
+            <span class="field-label">Beer name</span>
+            <input name="name" type="text" maxlength="32" value="STRATASPHERE" />
+          </label>
+          <label class="field">
+            <span class="field-label">Style</span>
+            <input name="style" type="text" maxlength="42" value="WEST COAST IPA" />
+          </label>
+          <div class="field-pair">
+            <label class="field">
+              <span class="field-label">ABV <span class="field-unit">%</span></span>
+              <input name="abv" type="text" inputmode="decimal" maxlength="6" value="6.2" />
+            </label>
+            <label class="field">
+              <span class="field-label">IBU</span>
+              <input name="ibu" type="text" inputmode="numeric" maxlength="5" value="56" />
+            </label>
+          </div>
+          <label class="field field-ingredients">
+            <span class="field-label">Malt</span>
+            <textarea name="malt" rows="2" maxlength="100">Lager, Munich, Dextrin</textarea>
+          </label>
+          <label class="field field-ingredients">
+            <span class="field-label">Hops</span>
+            <textarea name="hops" rows="3" maxlength="150">Magnum, Strata, Citra, Trident SLVO, Trident T90</textarea>
+          </label>
+          <label class="field field-ingredients">
+            <span class="field-label">Yeast</span>
+            <textarea name="yeast" rows="2" maxlength="100">WHC LAX</textarea>
+          </label>
+        </form>
+
+        <div class="editor-footer">
+          <p class="fixed-note"><span class="fixed-lock" aria-hidden="true">●</span> Brewery identity is fixed to your template.</p>
+          <button class="reset-button" id="reset-button" type="button" title="Restore sample details">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.2 8.1A6.2 6.2 0 1 1 4 11.4M4.2 4.2v4.3h4.3" /></svg>
+            Reset sample
+          </button>
+        </div>
+      </section>
+
+      <section class="preview-panel" aria-labelledby="preview-heading">
+        <div class="preview-toolbar">
+          <div>
+            <div class="section-kicker"><span>02</span> / LIVE PREVIEW</div>
+            <h2 id="preview-heading">Your label</h2>
+          </div>
+          <button class="download-button" id="download-button" type="button">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.8v9.1m0 0 3.4-3.4M10 11.9 6.6 8.5M3.3 13.6v2.7h13.4v-2.7" /></svg>
+            Download PNG
+          </button>
+        </div>
+        <div class="canvas-stage">
+          <canvas id="label-canvas" width="1024" height="1536" role="img" aria-label="Live preview of the beer label"></canvas>
+        </div>
+        <div class="preview-caption"><span>SKERNESIDE BREWING</span><span>1024 × 1536 PX</span></div>
+      </section>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
